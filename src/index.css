@@ -1,20 +1,20 @@
 :root {
-  font-family: "Trebuchet MS", "Verdana", "Tahoma", sans-serif;
-  color: #1b2b25;
-  background-color: #f4f1ea;
-  --bg: #f4f1ea;
-  --bg-alt: #fdf7ee;
-  --panel: #ffffff;
-  --panel-strong: #f8f3ea;
-  --accent: #1f8a70;
-  --accent-strong: #13745d;
-  --accent-warm: #f4a340;
-  --muted: #5d6d68;
-  --muted-light: #8a9893;
-  --line: #e7dfd2;
-  --danger: #d85b5b;
-  --shadow: 0 30px 60px rgba(27, 43, 37, 0.12);
-  --shadow-soft: 0 20px 40px rgba(27, 43, 37, 0.08);
+  font-family: "Inter", "Outfit", "Segoe UI", sans-serif;
+  color: #f8fafc;
+  background-color: #0b0f19;
+  --bg: #0b0f19;
+  --bg-alt: #111827;
+  --panel: #1e293b;
+  --panel-strong: #334155;
+  --accent: #6366f1;
+  --accent-strong: #4f46e5;
+  --accent-warm: #ec4899;
+  --muted: #94a3b8;
+  --muted-light: #64748b;
+  --line: #334155;
+  --danger: #ef4444;
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -24,7 +24,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, #f3efe6 0%, #f6f2e9 45%, #f0f4f1 100%);
+  background: var(--bg);
   color: inherit;
 }
 
@@ -32,8 +32,8 @@ body::before {
   content: "";
   position: fixed;
   inset: -20% 0 0 -10%;
-  background: radial-gradient(circle at 20% 20%, rgba(31, 138, 112, 0.16), transparent 50%),
-    radial-gradient(circle at 80% 0%, rgba(244, 163, 64, 0.2), transparent 45%);
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.15), transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
@@ -52,7 +52,7 @@ body::before {
 
 .sidebar {
   padding: 28px 20px;
-  background: linear-gradient(160deg, #ffffff 0%, #f9f4ea 100%);
+  background: var(--bg-alt);
   border-right: 1px solid var(--line);
   box-shadow: var(--shadow-soft);
   animation: fadeUp 0.6s ease both;
@@ -69,7 +69,7 @@ body::before {
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: linear-gradient(140deg, var(--accent), #2bb88e);
+  background: linear-gradient(140deg, var(--accent), var(--accent-warm));
   color: white;
   display: grid;
   place-items: center;
@@ -107,12 +107,12 @@ body::before {
 
 .nav-item:hover {
   background: var(--panel-strong);
-  color: #1f312a;
+  color: #f8fafc;
 }
 
 .nav-item.active {
-  background: rgba(31, 138, 112, 0.12);
-  color: var(--accent-strong);
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
   font-weight: 700;
 }
 
@@ -202,22 +202,22 @@ h1 {
 .chip {
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(31, 138, 112, 0.14);
-  color: var(--accent-strong);
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
   font-size: 11px;
   font-weight: 700;
 }
 
 .chip.ghost {
-  background: rgba(27, 43, 37, 0.08);
+  background: var(--panel-strong);
   color: var(--muted);
 }
 
 .pill {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(244, 163, 64, 0.18);
-  color: #a05a11;
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
   font-size: 12px;
   font-weight: 700;
 }
@@ -272,14 +272,14 @@ select {
   border: 1px solid var(--line);
   padding: 12px 14px;
   font-size: 14px;
-  background: #fff;
-  color: #1b2b25;
+  background: var(--bg-alt);
+  color: #f8fafc;
 }
 
 input:focus,
 select:focus {
-  outline: 2px solid rgba(31, 138, 112, 0.3);
-  border-color: rgba(31, 138, 112, 0.3);
+  outline: 2px solid rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
 }
 
 .checkbox-field {
@@ -349,12 +349,12 @@ select:focus {
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: white;
-  box-shadow: 0 10px 20px rgba(31, 138, 112, 0.25);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
 }
 
 .btn-outline {
-  background: rgba(27, 43, 37, 0.06);
-  color: #1b2b25;
+  background: var(--panel-strong);
+  color: #f8fafc;
 }
 
 .btn-danger {
@@ -425,7 +425,7 @@ thead th {
   place-items: center;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, var(--accent), #2bb88e);
+  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
   overflow: hidden;
 }
 
@@ -453,8 +453,8 @@ thead th {
 }
 
 .status-pill.active {
-  background: rgba(31, 138, 112, 0.12);
-  color: var(--accent-strong);
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
 }
 
 .status-pill.inactive {
